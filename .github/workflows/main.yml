@@ -1,12 +1,11 @@
 on: [push]
 
 jobs:
-  tagging:
+  bump:
     runs-on: ubuntu-latest
     steps:
-    - name: Tag
-      uses: richardsimko/update-tag@master
-      with:
-        tag_name: testtag
+    - name: Bump
+      uses: anothrNick/github-tag-action@1.22.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
