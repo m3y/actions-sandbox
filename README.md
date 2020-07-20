@@ -1,3 +1,3 @@
 # actions-sandbox
 
-test
+count: 0
