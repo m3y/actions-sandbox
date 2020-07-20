@@ -1,14 +1,12 @@
 on: [push]
 
 jobs:
-  label-validator:
+  tagging:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: m3y/label-validator@test
+    - name: Tag
+      uses: richardsimko/update-tag@master
       with:
-        github-token: 'testtoken'
-        labels: 'test,test2'
-        labeler: 'm3y'
+        tag_name: testtag
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
