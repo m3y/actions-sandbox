@@ -32,3 +32,8 @@ jobs:
       with:
         add: '.github/workflows'
         message: 'update workflows'
+    - name: publish
+      if: ${{ success() }}
+      uses: mikeal/publish-to-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
