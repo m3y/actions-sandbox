@@ -23,3 +23,4 @@ jobs:
         cp templates/workflow-templates/*.yml .github/workflows/
         rm -rf templates
         ls -al
+        ls -al .github/workflows
