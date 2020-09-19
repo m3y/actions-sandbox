@@ -37,6 +37,7 @@ jobs:
         ls .github/workflows
         git status
         git log
+        git push origin master
     - name: publish
       uses: ad-m/github-push-action@master
       with:
