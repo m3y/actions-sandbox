@@ -20,7 +20,7 @@ jobs:
         if [ ! -d .github/workflows ]; then
           mkdir .github/workflows/
         fi
-        cp templates/workflow-templates/*.yml .github/workflows/
+        cp -f templates/workflow-templates/*.yml .github/workflows/
         rm -rf templates
         ls -al
         ls -al .github/workflows
@@ -33,5 +33,6 @@ jobs:
         add: '.github/workflows'
         message: 'update workflows'
     - name: publish
-      if: ${{ success() }}
-      run: git push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
