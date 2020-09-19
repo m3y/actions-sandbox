@@ -24,3 +24,8 @@ jobs:
         rm -rf templates
         ls -al
         ls -al .github/workflows
+    - name: update
+      uses: mikeal/publish-to-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH_NAME: 'test'
