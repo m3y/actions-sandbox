@@ -32,8 +32,12 @@ jobs:
       with:
         add: '.github/workflows'
         message: 'update workflows'
+    - name: check2
+      run: |
+        ls .github/workflows
+        git status
+        git log
     - name: publish
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.MY_PAT }}
-        force: true
