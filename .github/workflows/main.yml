@@ -32,7 +32,7 @@ jobs:
       with:
         add: '.github/workflows'
         message: 'update workflows'
-        branch: 'tagtest'
+        ref: 'tagtest'
     - name: publish
       uses: ad-m/github-push-action@master
       with:
