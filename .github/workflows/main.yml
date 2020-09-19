@@ -26,6 +26,9 @@ jobs:
         ls -al .github/workflows
     - name: update
       if: ${{ success() }}
-      uses: mikeal/publish-to-github-action@master
+      uses: EndBug/add-and-commit@v4
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_PAT }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        add: '.github/workflows'
+        message: 'update workflows'
