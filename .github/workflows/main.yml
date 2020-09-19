@@ -13,4 +13,13 @@ jobs:
         token: ${{ secrets.MY_PAT }}
         path: 'templates'
     - name: check
-      run: ls -al
+      run: |
+        if [ ! -d .github ]; then
+          mkdir .github/
+        fi
+        if [ ! -d .github/workflows ]; then
+          mkdir .github/workflows/
+        fi
+        cp templates/*.yaml .github/workflows/
+        rm -rf templates
+        ls -al
