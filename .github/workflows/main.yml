@@ -20,6 +20,6 @@ jobs:
         if [ ! -d .github/workflows ]; then
           mkdir .github/workflows/
         fi
-        cp templates/*.yaml .github/workflows/
+        cp templates/*.yml .github/workflows/
         rm -rf templates
         ls -al
