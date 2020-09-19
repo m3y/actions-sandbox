@@ -6,9 +6,10 @@ jobs:
     name: A job to say hello
     steps:
     - name: Hello world action step
-      id: hello
-      uses: m3y/label-validator@test
+      uses: actions/checkout@v2
       with:
-        github-token: 'testtoken'
-        labels: 'test,test2'
-        labeler: 'm3y'
+        repository: m3y/.github
+        token: ${{ secrets.MY_PAT }}
+        path: 'templates'
+    - name: check
+      run: ls -al
