@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: input date
       run: |
-        input_date=${{ github.event.input.date }}
+        input_date=${{ github.event.inputs.date }}
         if [[ -z "$input_date" ]]; then
           start_date=$(date -d "1 day ago" +"%Y-%m-01")
         else
