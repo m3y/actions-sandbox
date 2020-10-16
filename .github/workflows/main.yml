@@ -14,7 +14,7 @@ jobs:
     - name: wait
       uses: m3y/random-wait-action@v0.1
       with:
-        max-wait-time: 5
+        max-wait-time: 30
     - name: input date
       run: |
         input_date=${{ github.event.inputs.date }}
