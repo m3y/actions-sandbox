@@ -19,4 +19,4 @@ jobs:
       run: |
         echo "${GITHUB_EVENT}"
         echo "${REPOSITORY_NAME}"
-        echo "${OWNER}
+        echo "${OWNER}"
