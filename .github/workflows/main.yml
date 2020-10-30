@@ -13,6 +13,6 @@ jobs:
     steps:
     - name: data
       env:
-        GITHUB_EVENT: ${{ github.event }}
+        GITHUB_EVENT: ${{ toJson(github.event) }}
       run: |
-        echo ${GITHUB_EVENT}
+        echo "${GITHUB_EVENT}"
