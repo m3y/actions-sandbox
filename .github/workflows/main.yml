@@ -16,8 +16,10 @@ jobs:
       env:
         GITHUB_EVENT: ${{ toJson(github.event) }}
         REPOSITORY_NAME: ${{ github.event.repository.name }}
+        REPOSITORY: ${{ github.repository }}
         OWNER: ${{ github.repository_owner }}
       run: |
         echo "${GITHUB_EVENT}"
         echo "${REPOSITORY_NAME}"
+        echo "${REPOSITORY}"
         echo "${OWNER}"
