@@ -1,11 +1,7 @@
 on:
   schedule:
     - cron: '*/1 * * * *'
-  workflow_dispatch:
-    mode:
-      description: 'run mode'
-      required: true
-      default: 'manual'
+  workflow_dispatch: dummy
 
 jobs:
   print_date:
