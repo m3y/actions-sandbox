@@ -1,13 +1,18 @@
 on:
   schedule:
-    - cron: '*/5 * * * *'
-  workflow_dispatch
+    - cron: '*/1 * * * *'
+  workflow_dispatch:
+    - mode:
+        description: 'run mode'
+        required: true
+        default: 'manual'
 
 jobs:
   print_date:
     runs-on: ubuntu-latest
     steps:
-    - name: wait
-      uses: m3y/random-wait-action@v0.1
-      with:
-        max-wait-time: 30
+    - name: data
+      env:
+        GITHUB_EVENT: ${{ github.event }}
+      run: |
+        echo ${GITHUB_EVENT}
