@@ -18,4 +18,4 @@ jobs:
         REPOSITORY: ${{ github.repository }}
       run: |
         echo "${GITHUB_EVENT}"
-        echo "${REPOSITORY_NAME}"
+        echo "${REPOSITORY}"
