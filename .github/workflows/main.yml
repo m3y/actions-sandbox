@@ -1,11 +1,7 @@
 on:
   #schedule:
   #  - cron: '*/5 * * * *'
-  workflow_dispatch:
-    inputs:
-      date:
-        description: 'date'
-        required: true
+  workflow_dispatch
 
 jobs:
   print_date:
@@ -15,13 +11,3 @@ jobs:
       uses: m3y/random-wait-action@v0.1
       with:
         max-wait-time: 30
-    - name: input date
-      run: |
-        input_date=${{ github.event.inputs.date }}
-        if [[ -z "$input_date" ]]; then
-          start_date=$(date -d "1 day ago" +"%Y-%m-01")
-        else
-          start_date=$(echo $input_date)
-        fi
-
-        echo $start_date
