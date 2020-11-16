@@ -15,7 +15,7 @@ jobs:
     - name: example
       uses: m3y/rust-just-action@main
       with:
-        command: '-l'
+        command: 'usage'
 
   print_date:
     runs-on: ubuntu-latest
