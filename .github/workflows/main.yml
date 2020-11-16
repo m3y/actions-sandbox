@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: example
-      uses: m3y/rust-just-action@main
+      uses: m3y/rust-just-action@v1
       with:
         command: usage
         file: tmp/justfile
