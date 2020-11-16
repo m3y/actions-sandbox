@@ -16,6 +16,7 @@ jobs:
       uses: m3y/rust-just-action@main
       with:
         command: 'usage'
+        file: 'tmp/justfile'
 
   print_date:
     runs-on: ubuntu-latest
