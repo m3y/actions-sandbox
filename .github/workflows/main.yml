@@ -1,8 +1,5 @@
 on:
-  #schedule:
-  #  - cron: '*/5 * * * *'
-  repository_dispatch:
-    types: [init]
+  push:
   workflow_dispatch:
     inputs:
       mode:
@@ -11,6 +8,15 @@ on:
         default: 'manual'
 
 jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: example
+      uses: m3y/rust-just-action@main
+      with:
+        command: '-l'
+
   print_date:
     runs-on: ubuntu-latest
     steps:
